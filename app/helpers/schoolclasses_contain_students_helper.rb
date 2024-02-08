@@ -1,0 +1,2 @@
+module SchoolclassesContainStudentsHelper
+end

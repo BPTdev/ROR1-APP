@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @grade_assignment %>
+
+<div>
+  <%= link_to "Edit this grade assignment", edit_grade_assignment_path(@grade_assignment) %> |
+  <%= link_to "Back to grade assignments", grade_assignments_path %>
+
+  <%= button_to "Destroy this grade assignment", @grade_assignment, method: :delete %>
+</div>

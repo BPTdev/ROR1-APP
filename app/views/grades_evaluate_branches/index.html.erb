@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Grades evaluate branches</h1>
+
+<div id="grades_evaluate_branches">
+  <% @grades_evaluate_branches.each do |grades_evaluate_branch| %>
+    <%= render grades_evaluate_branch %>
+    <p>
+      <%= link_to "Show this grades evaluate branch", grades_evaluate_branch %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New grades evaluate branch", new_grades_evaluate_branch_path %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @schoolclasses_contain_student %>
+
+<div>
+  <%= link_to "Edit this schoolclasses contain student", edit_schoolclasses_contain_student_path(@schoolclasses_contain_student) %> |
+  <%= link_to "Back to schoolclasses contain students", schoolclasses_contain_students_path %>
+
+  <%= button_to "Destroy this schoolclasses contain student", @schoolclasses_contain_student, method: :delete %>
+</div>

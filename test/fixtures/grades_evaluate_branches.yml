@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evaluation_date: 2024-02-08
+  grade: one
+  branch: one
+
+two:
+  evaluation_date: 2024-02-08
+  grade: two
+  branch: two

@@ -1,0 +1,32 @@
+<%= form_with(model: grades_evaluate_branch) do |form| %>
+  <% if grades_evaluate_branch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(grades_evaluate_branch.errors.count, "error") %> prohibited this grades_evaluate_branch from being saved:</h2>
+
+      <ul>
+        <% grades_evaluate_branch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :evaluation_date, style: "display: block" %>
+    <%= form.date_field :evaluation_date %>
+  </div>
+
+  <div>
+    <%= form.label :grade_id, style: "display: block" %>
+    <%= form.text_field :grade_id %>
+  </div>
+
+  <div>
+    <%= form.label :branch_id, style: "display: block" %>
+    <%= form.text_field :branch_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
