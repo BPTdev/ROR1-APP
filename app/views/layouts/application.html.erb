@@ -5,12 +5,43 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container w-full mx-auto  mt-3 bg-green-400">
+      <div class="w-full h-12 justify-center items-center flex flex-wrap bg-red-300">
+        <div class="flex-1 bg-blue-400">
+          <h1 class="text-2xl">Intranet</h1>
+        </div>
+        <div class="flex-1 bg-violet-300 flex flex-row-reverse">
+          <div class="flex">
+            <div class="mx-4">
+              <h1 class="">Home</h1>
+            </div>
+            <div class="mx-4">
+              <h1 class="">Students</h1>
+            </div>
+            <div class="mx-4">
+              <h1 class="">Branches</h1>
+            </div>
+            <div class="mx-4">
+              <h1 class="">Teachers</h1>
+            </div>
+            <div class="mx-4">
+              <h1 class="">Grades</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-yellow-200 justify-center items-center">
+        <div class=" m-2 bg-slate-400">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
