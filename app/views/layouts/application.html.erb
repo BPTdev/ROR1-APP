@@ -12,33 +12,43 @@
   </head>
 
   <body>
-    <main class="container w-full mx-auto  mt-3 bg-green-400">
-      <div class="w-full h-12 justify-center items-center flex flex-wrap bg-red-300">
-        <div class="flex-1 bg-blue-400">
-          <h1 class="text-2xl">Intranet</h1>
-        </div>
-        <div class="flex-1 bg-violet-300 flex flex-row-reverse">
-          <div class="flex">
-            <div class="mx-4">
-              <h1 class="">Home</h1>
+    <main class="w-full">
+      <div class=" bg-slate-300">
+        <div class=" mx-3 h-12 justify-center items-center flex flex-wrap ">
+          <div class=" ">
+            <h1 class="text-2xl"><img src="https://dummyimage.com/100x40/fff/000&text=Lo+titre+là"></h1>
+          </div>
+          <div class="flex-1 flex justify-between">
+            <div class="flex flex-1 ">
+              <div class="mx-4">
+                <h1 class=""><%= link_to "Home", url_for(controller: 'home', action: 'index') %></h1>
+              </div>
+              <div class="mx-4">
+                <h1 class=""><%= link_to "Students", url_for(controller: 'students', action: 'index') %></h1>
+              </div>
+              <div class="mx-4">
+                <h1 class=""><%= link_to "Branches", url_for(controller: 'branches', action: 'index') %></h1>
+              </div>
+              <div class="mx-4">
+                <h1 class=""><%= link_to "Teachers", url_for(controller: 'teachers', action: 'index') %></h1>
+              </div>
+              <div class="mx-4">
+                <h1 class=""><%= link_to "Grades", url_for(controller: 'grades', action: 'index') %></h1>
+              </div>
+              <div class="mx-4">
+                <h1 class=""><%= link_to "Schoolclasses", url_for(controller: 'school_classes', action: 'index') %></h1>
+              </div>
             </div>
-            <div class="mx-4">
-              <h1 class="">Students</h1>
-            </div>
-            <div class="mx-4">
-              <h1 class="">Branches</h1>
-            </div>
-            <div class="mx-4">
-              <h1 class="">Teachers</h1>
-            </div>
-            <div class="mx-4">
-              <h1 class="">Grades</h1>
+            <div class="flex">
+              <h1 class="flex-1"><%= link_to "Register", url_for(controller: 'home', action: 'index') %></h1>
+              <p class="mx-2">|</p>
+              <h1 class="flex-1"><%= link_to "Login", url_for(controller: 'home', action: 'index') %></h1>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-yellow-200 justify-center items-center">
-        <div class=" m-2 bg-slate-400">
+      <div class="  justify-center items-center">
+        <div class=" my-2 mx-12 ">
           <%= yield %>
         </div>
       </div>
