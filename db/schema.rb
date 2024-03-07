@@ -77,8 +77,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
     t.string "zip"
     t.string "email"
     t.string "phone"
+    t.integer "school_class_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["school_class_id"], name: "index_students_on_school_class_id"
   end
 
   create_table "teachers", force: :cascade do |t|
@@ -113,6 +115,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
   add_foreign_key "school_classes", "teachers"
   add_foreign_key "schoolclasses_contain_students", "school_classes"
   add_foreign_key "schoolclasses_contain_students", "students"
+  add_foreign_key "students", "school_classes"
   add_foreign_key "teachers_teach_branches", "branches"
   add_foreign_key "teachers_teach_branches", "teachers"
 end

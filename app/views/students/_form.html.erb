@@ -52,6 +52,11 @@
   </div>
 
   <div>
+    <%= form.label :school_class_id, "School Class", style: "display: block" %>
+    <%= form.collection_select :school_class_id, SchoolClass.all, :id, :name %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
