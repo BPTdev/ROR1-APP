@@ -1,4 +1,4 @@
 class Grade < ApplicationRecord
-    has_one :student
-    has_one :branch
+    belongs_to :student
+    belongs_to :branch
 end

@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   <div>
     <%= form.label :name, style: "display: block" %>
@@ -20,6 +21,13 @@
     <%= form.label :school_year, style: "display: block" %>
     <%= form.text_field :school_year %>
   </div>
+
+
+  <div>
+    <%= form.label :teacher_id, "Teacher", style: "display: block" %>
+    <%= form.collection_select :teacher_id, Teacher.all, :id, :firstname %>
+  </div>
+
 
   <div>
     <%= form.submit %>

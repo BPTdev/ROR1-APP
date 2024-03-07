@@ -30,8 +30,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
 
   create_table "grades", force: :cascade do |t|
     t.string "grade_value"
+    t.integer "student_id", null: false
+    t.integer "branch_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["branch_id"], name: "index_grades_on_branch_id"
+    t.index ["student_id"], name: "index_grades_on_student_id"
   end
 
   create_table "grades_evaluate_branches", force: :cascade do |t|
@@ -47,8 +51,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
   create_table "school_classes", force: :cascade do |t|
     t.string "name"
     t.string "school_year"
+    t.integer "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_school_classes_on_teacher_id"
   end
 
   create_table "schoolclasses_contain_students", force: :cascade do |t|
@@ -97,8 +103,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
 
   add_foreign_key "grade_assignments", "grades"
   add_foreign_key "grade_assignments", "students"
+  add_foreign_key "grades", "branches"
+  add_foreign_key "grades", "students"
   add_foreign_key "grades_evaluate_branches", "branches"
   add_foreign_key "grades_evaluate_branches", "grades"
+  add_foreign_key "school_classes", "teachers"
   add_foreign_key "schoolclasses_contain_students", "school_classes"
   add_foreign_key "schoolclasses_contain_students", "students"
   add_foreign_key "teachers_teach_branches", "branches"
