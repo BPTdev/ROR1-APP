@@ -65,6 +65,6 @@ class BranchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def branch_params
-      params.require(:branch).permit(:name, :status, :average)
+      params.require(:branch).permit(:name, :status, :average, :teacher_id)
     end
 end

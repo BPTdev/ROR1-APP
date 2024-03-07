@@ -15,8 +15,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
     t.string "name"
     t.string "status"
     t.decimal "average"
+    t.integer "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_branches_on_teacher_id"
   end
 
   create_table "grade_assignments", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
     t.index ["teacher_id"], name: "index_teachers_teach_branches_on_teacher_id"
   end
 
+  add_foreign_key "branches", "teachers"
   add_foreign_key "grade_assignments", "grades"
   add_foreign_key "grade_assignments", "students"
   add_foreign_key "grades", "branches"

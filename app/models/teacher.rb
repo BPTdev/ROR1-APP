@@ -1,4 +1,4 @@
 class Teacher < ApplicationRecord
-    has_many :branches
+    has_and_belongs_to_many :branches
     has_many :school_classes
 end

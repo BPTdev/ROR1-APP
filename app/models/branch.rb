@@ -1,5 +1,5 @@
 class Branch < ApplicationRecord
-    belongs_to :teachers
-    belongs_to :students
+    belongs_to :teacher
+    has_many :students
     has_many :grades
 end
