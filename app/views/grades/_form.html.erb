@@ -17,6 +17,18 @@
   </div>
 
   <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :student_id, "Student", style: "display: block" %>
+    <%= form.collection_select :student_id, Student.all, :id, :firstname %>
+  </div>
+  <div>
+    <%= form.label :branch_id, "Branch", style: "display: block" %>
+    <%= form.collection_select :branch_id, Branch.all, :id, :name %>
+  </div>
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

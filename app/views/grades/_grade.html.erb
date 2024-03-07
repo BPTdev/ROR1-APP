@@ -3,5 +3,17 @@
     <strong>Grade value:</strong>
     <%= grade.grade_value %>
   </p>
+  <p>
+    <strong>Title:</strong>
+    <%= grade.title %>
+  </p>
+  <p>
+    <strong>Student:</strong>
+    <%= Student.find(grade.student_id).firstname %>
+  </p>
+  <p>
+    <strong>Branch:</strong>
+    <%= Branch.find(grade.branch_id).name %>
+  </p>
 
 </div>
