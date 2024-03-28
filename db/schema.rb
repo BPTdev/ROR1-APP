@@ -93,6 +93,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_08_082003) do
     t.string "zip"
     t.string "email"
     t.string "phone"
+    t.boolean "dean"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,6 +9,8 @@ class CreateTeachers < ActiveRecord::Migration[7.1]
       t.string :zip
       t.string :email
       t.string :phone
+      t.boolean :dean
+      
 
       t.timestamps
     end
